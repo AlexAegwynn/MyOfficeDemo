@@ -1,8 +1,16 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
+<link href="~/Content/Authentication/login.css" rel="stylesheet" />
 
-<h2>Login</h2>
+<div class="t_div">
+    <span>My Office</span><br /><br />
+    <span>　　管理系统</span>
+</div>
 
+<div class="login_div">
+    <input type="text" placeholder="用户名" class="user_img" />
+    <input type="text" placeholder="密　码" class="pwd_img" />
+    <input type="button" value="登　录" class="btnLogin" />
+</div>

@@ -1,0 +1,84 @@
+﻿input::-webkit-input-placeholder {
+    color: #FFF;
+}
+
+.login_div {
+    width: 400px;
+    height: 260px;
+    margin-top: -150px;
+    /*margin-left:-100px;*/
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    padding: 50px;
+    box-sizing: border-box;
+    /*不会把盒子撑开*/
+}
+
+    .login_div::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: -1;
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+        margin: -30px; /*消除边缘透明*/
+        background: url(../../Content/images/bg_login1.jpg) center top;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .login_div input {
+        width: 248px;
+        height: 40px;
+        border: 1px solid rgba(128, 128, 128, 0.60);
+        padding: 0px 0px 0px 50px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        font-size: 1em;
+        color: white;
+        outline: none;
+    }
+
+.user_img {
+    background-position: 10px;
+    background-image: url(../../Content/images/name.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+
+.pwd_img {
+    background-position: 10px;
+    background-image: url(../../Content/images/password.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+
+.login_div .btnLogin {
+    padding: 0px;
+    width: 300px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.60);
+    cursor: pointer;
+}
+
+.t_div {
+    width: 400px;
+    height: 160px;
+    position: absolute;
+    top: 15%;
+    left: 58%;
+}
+
+    .t_div span {
+        font-size: 4em;
+        color: white;
+        font-family: STXingkai;
+    }
