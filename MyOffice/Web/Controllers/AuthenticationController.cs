@@ -42,5 +42,14 @@ namespace Web.Controllers
 
             return json;
         }
+
+        /// <summary>
+        /// 退出登录
+        /// </summary>
+        public ActionResult LogoutUser()
+        {
+            Session.Remove("UserInfo"); //移除session
+            return RedirectToAction("Index");
+        }
     }
 }
