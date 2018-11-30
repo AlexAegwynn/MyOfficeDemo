@@ -3,10 +3,19 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <style>
+        .content_div {
+            background: url(../../Content/images/bg_home.jpg) center bottom;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }
+    </style>
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div class="content_div">
         @RenderBody()
     </div>
 </body>

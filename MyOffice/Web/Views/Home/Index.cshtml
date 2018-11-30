@@ -1,8 +1,134 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "MyOffice";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Home/home.css" rel="stylesheet" />
+<style>
+    .top_div {
+        overflow: hidden;
+    }
 
-<h2>Index</h2>
+    .center_div {
+        overflow: hidden;
+        float: left;
+        margin-bottom: -106px;
+        height: 100vh;
+        width: 100%;
+    }
 
+    .left_div {
+        float: left;
+        min-width: 220px;
+        height: 100%;
+        /*background-color: antiquewhite;*/
+    }
+
+    .right_div {
+        overflow: hidden;
+        height: 100%;
+        /*background-color: aquamarine;*/
+    }
+
+    .logo_div {
+        width: 200px;
+        height: 44px;
+        margin: 15px 0px 15px 20px;
+    }
+
+        .logo_div img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+    .nav_div {
+        height: 32px;
+        background-color: cornflowerblue;
+    }
+
+    .glyphicon {
+        width: 50px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.5em;
+    }
+</style>
+<script>
+    $(function () {
+        $('#hide_logo').click(function () {
+            if (this.className == 'glyphicon glyphicon-chevron-up') {
+                this.className = 'glyphicon glyphicon-chevron-down';
+            } else {
+                this.className = 'glyphicon glyphicon-chevron-up';
+            }
+        })
+    })
+</script>
+<style>
+    .lib-video {
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+<script>
+    function buildVideo() {
+        var objDiv = document.getElementsByClassName('right_div');
+        var objVideo = document.createElement('video');
+        objVideo.className = 'lib-video';
+        objVideo.setAttribute('loop', '');
+        objVideo.setAttribute('autoplay', '');
+        objVideo.setAttribute('src', '//cloud.video.taobao.com/play/u/684765000/p/1/e/6/t/1/50266788608.mp4');
+        objVideo.setAttribute('type', 'video/mp4');
+
+        objDiv[0].appendChild(objVideo);
+    }
+
+    function play() {
+        var video = document.getElementsByClassName('lib-video');
+
+        if (video[0].paused) {
+            video[0].play();
+        } else {
+            video[0].pause();
+        }
+    }
+
+    function buildVideoJq() {
+        var obj = $('#right_div');
+        var obj2 = $('<video></video>');
+        obj2.addClass('lib-video');
+        obj2.attr({
+            'controls': '',
+            'loop': '',
+            'autoplay': '',
+            'controlslist': 'nodownload',
+            'src': '//cloud.video.taobao.com/play/u/684765000/p/1/e/6/t/1/50266788608.mp4',
+            'type': 'video/mp4'
+        })
+        obj.append(obj2);
+    }
+
+    function Remove() {
+        $('.lib-video').remove();
+    }
+</script>
+
+<div class="top_div">
+    <div class="logo_div">
+        <img src="~/Content/images/logo.png" />
+    </div>
+    <div class="nav_div">
+        <span id="hide_logo" class="glyphicon glyphicon-chevron-up" onclick="hideLogo(this)"></span>
+    </div>
+</div>
+<div class="center_div">
+    <div class="left_div">
+        123123
+    </div>
+    <div class="right_div">
+        123123123
+    </div>
+</div>

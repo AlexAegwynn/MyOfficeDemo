@@ -161,8 +161,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\bg_login1.jpg" />
-    <Content Include="Content\images\bg_login2.jpg" />
+    <Content Include="Content\Home\home.css" />
+    <Content Include="Content\images\bg_login.jpg" />
+    <Content Include="Content\images\bg_home.jpg" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\name.png" />
     <Content Include="Content\images\password.png" />
     <Content Include="favicon.ico" />

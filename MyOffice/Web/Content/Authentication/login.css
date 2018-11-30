@@ -30,7 +30,7 @@
         -webkit-filter: blur(10px);
         filter: blur(10px);
         margin: -30px; /*消除边缘透明*/
-        background: url(../../Content/images/bg_login1.jpg) center top;
+        background: url(../../Content/images/bg_login.jpg) center top;
         background-size: cover;
         background-attachment: fixed;
     }
