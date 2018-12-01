@@ -6,16 +6,16 @@
     <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <style>
-        .content_div {
-            background: url(../../Content/images/bg_home.jpg) center bottom;
-            background-size: cover;
-            /*overflow: hidden;*/
+        .page_div {
+            background: url(../../Content/images/bg_home_top.jpg) center top;
+            background-repeat: no-repeat;
+            /*background-size: cover;*/
         }
     </style>
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div class="content_div">
+    <div class="page_div">
         @RenderBody()
     </div>
 </body>

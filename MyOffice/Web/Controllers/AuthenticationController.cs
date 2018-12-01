@@ -27,7 +27,7 @@ namespace Web.Controllers
             {
                 json.Data = new { state = false, message = "用户名密码不能为空！" }; return json;
             }
-            if (vModel.UserName != "admin" || vModel.Password != "000000")
+            if (vModel.UserName != "admin" || vModel.Password != "123")
             {
                 json.Data = new { state = false, message = "用户名或密码错误！" }; return json;
             }

@@ -1,33 +1,23 @@
 ﻿@{
     ViewBag.Title = "MyOffice";
+    ViewBag.UserName = "Alex";
+    ViewBag.MsgCount = "99";
+    ViewBag.ScheduleCount = "99";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/Home/home.css" rel="stylesheet" />
+<script src="~/Scripts/Home/Clock.js"></script>
 <style>
+    span {
+        font-family: 'Microsoft YaHei';
+    }
+
+    /******************/
+
     .top_div {
         overflow: hidden;
-    }
-
-    .center_div {
-        overflow: hidden;
-        float: left;
-        margin-bottom: -106px;
-        height: 100vh;
-        width: 100%;
-    }
-
-    .left_div {
-        float: left;
-        min-width: 220px;
-        height: 100%;
-        /*background-color: antiquewhite;*/
-    }
-
-    .right_div {
-        overflow: hidden;
-        height: 100%;
-        /*background-color: aquamarine;*/
+        position: relative;
     }
 
     .logo_div {
@@ -42,77 +32,224 @@
         }
 
     .nav_div {
+        position: relative;
         height: 32px;
-        background-color: cornflowerblue;
+        background-color: rgba(255, 255, 255, 0.50);
     }
 
-    .glyphicon {
-        width: 50px;
-        text-align: center;
-        line-height: 30px;
-        font-size: 1.5em;
+    .info_div {
+        margin-left: 10px;
+        padding-right: 70px;
+        height: 32px;
     }
+
+        .info_div span {
+            /*font-family: 'Microsoft YaHei';*/
+            line-height: 32px;
+            font-size: 0.5em;
+            font-weight: 600;
+        }
+
+    .btn_span {
+        display: inline-block;
+        width: 80px;
+        margin-left: 5px;
+        float: right;
+        text-align: center;
+    }
+
+        .btn_span:hover {
+            background-color: rgba(255, 255, 255, 0.20);
+            cursor: pointer;
+        }
+
+        .btn_span:active {
+            background-color: rgba(255, 255, 255, 0.10);
+        }
+
+    #hide_logo {
+        width: 70px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        text-align: center;
+        line-height: 32px;
+        font-size: 1.5em;
+        color: #808080;
+        border-left: 1px solid rgba(128, 128, 128, 0.60);
+    }
+
+        #hide_logo:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+    .control_div {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 342px;
+        height: 35px;
+        background-color: rgba(0, 0, 0, 0.40);
+        border-bottom-left-radius: 50px;
+        padding-right: 10px;
+    }
+
+        .control_div span {
+            display: inline-block;
+            line-height: 35px;
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            width: 90px;
+            float: right;
+            text-align: center;
+        }
+
+            .control_div span:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.20);
+            }
+
+            .control_div span:active {
+                background-color: rgba(128, 128, 128, 0.30);
+            }
+
+    /******************/
+
+    .center_div {
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        top: 106px;
+        width: 100%;
+        background-color: white;
+    }
+
+    /******************/
+
+    .left_div {
+        float: left;
+        width: 220px;
+        min-width: 220px;
+        height: 100%;
+        display: flex;
+        /*display:none;*/
+    }
+
+    .menu_div {
+        width: 200px;
+        flex: auto;
+        margin: 9px 0px 9px 9px;
+        border: 1px solid rgba(128, 128, 128, 0.60);
+        background-color: white;
+    }
+
+    /******************/
+
+    .right_div {
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+    }
+
+    .tab_content_div {
+        flex: auto;
+        margin: 9px;
+        border: 1px solid rgba(128, 128, 128, 0.60);
+        background-color: white;
+    }
+
+    .tab_div {
+        position: relative;
+        z-index: 1;
+        height: 30px;
+        width: 100%;
+        padding-left: 20px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.60);
+    }
+
+        .tab_div span {
+            line-height: 30px;
+        }
+
+    #home_btn {
+        display: inline-block;
+        width: 60px;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+        #home_btn:hover {
+            cursor: pointer;
+            background-color: rgba(165, 182, 214, 0.70);
+        }
+
+        #home_btn:active {
+            cursor: pointer;
+            background-color: rgba(165, 182, 214, 0.80);
+        }
+
+    #left_btn {
+        font-size: 1em;
+        position: absolute;
+        width: 20px;
+        height: 30px;
+        top: 0px;
+        left: 0px;
+        line-height: 29px;
+        text-align: center;
+        color: #a3a3a3;
+        border-right: 1px solid #a3a3a3;
+    }
+
+        #left_btn:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+    .content_div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        bottom: 30px;
+        padding-top: 30px;
+        z-index: -1;
+    }
+    /******************/
 </style>
 <script>
     $(function () {
         $('#hide_logo').click(function () {
             if (this.className == 'glyphicon glyphicon-chevron-up') {
                 this.className = 'glyphicon glyphicon-chevron-down';
+                $('.logo_div').hide();
+                $('.control_div').hide();
+                $('.center_div').css('top', '32px');
             } else {
                 this.className = 'glyphicon glyphicon-chevron-up';
+                $('.center_div').css('top', '106px');
+                $('.logo_div').show();
+                $('.control_div').show();
             }
-        })
+        });
+
+        $('#left_btn').click(function () {
+            if (this.className == 'glyphicon glyphicon-chevron-left') {
+                this.className = 'glyphicon glyphicon-chevron-right';
+                $('.left_div').css('display', 'none');
+            } else {
+                this.className = 'glyphicon glyphicon-chevron-left';
+                $('.left_div').css('display', 'flex');
+            }
+        });
     })
-</script>
-<style>
-    .lib-video {
-        width: 400px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style>
-<script>
-    function buildVideo() {
-        var objDiv = document.getElementsByClassName('right_div');
-        var objVideo = document.createElement('video');
-        objVideo.className = 'lib-video';
-        objVideo.setAttribute('loop', '');
-        objVideo.setAttribute('autoplay', '');
-        objVideo.setAttribute('src', '//cloud.video.taobao.com/play/u/684765000/p/1/e/6/t/1/50266788608.mp4');
-        objVideo.setAttribute('type', 'video/mp4');
 
-        objDiv[0].appendChild(objVideo);
-    }
-
-    function play() {
-        var video = document.getElementsByClassName('lib-video');
-
-        if (video[0].paused) {
-            video[0].play();
-        } else {
-            video[0].pause();
+    function Logout() {
+        if (confirm('确认退出登录？')) {
+            document.location.href = '/Authentication/LogoutUser';
         }
-    }
-
-    function buildVideoJq() {
-        var obj = $('#right_div');
-        var obj2 = $('<video></video>');
-        obj2.addClass('lib-video');
-        obj2.attr({
-            'controls': '',
-            'loop': '',
-            'autoplay': '',
-            'controlslist': 'nodownload',
-            'src': '//cloud.video.taobao.com/play/u/684765000/p/1/e/6/t/1/50266788608.mp4',
-            'type': 'video/mp4'
-        })
-        obj.append(obj2);
-    }
-
-    function Remove() {
-        $('.lib-video').remove();
     }
 </script>
 
@@ -121,14 +258,35 @@
         <img src="~/Content/images/logo.png" />
     </div>
     <div class="nav_div">
-        <span id="hide_logo" class="glyphicon glyphicon-chevron-up" onclick="hideLogo(this)"></span>
+        <div class="info_div">
+            <span>欢迎用户 [ @ViewBag.UserName ] 登录，</span><span id="clock"></span>
+            <span class="btn_span">日程（@ViewBag.ScheduleCount）</span>
+            <span class="btn_span">消息（@ViewBag.MsgCount）</span>
+        </div>
+        <span id="hide_logo" class="glyphicon glyphicon-chevron-up"></span>
+    </div>
+    <div class="control_div">
+        <span onclick="Logout()">退出登录</span>
+        <span>系统设置</span>
+        <span style="width:120px;">[ 中文 ] 切换</span>
     </div>
 </div>
-<div class="center_div">
+<div class="center_div bgcolor">
     <div class="left_div">
-        123123
+        <div class="menu_div"></div>
     </div>
     <div class="right_div">
-        123123123
+        <div class="tab_content_div">
+            <div class="tab_div">
+                <i id="left_btn" class="glyphicon glyphicon-chevron-left"></i>
+                <span id="home_btn">首页</span>
+            </div>
+            <div class="content_div"></div>
+        </div>
     </div>
 </div>
+
+<script>
+    var clock = new Clock();
+    clock.display(document.getElementById("clock"));
+</script>
