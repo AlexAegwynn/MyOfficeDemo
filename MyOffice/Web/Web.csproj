@@ -207,6 +207,13 @@
     <Content Include="Views\Authentication\Index.cshtml" />
     <Content Include="Views\Modules\HomeModule.cshtml" />
     <Content Include="Views\Modules\DepMgtModule.cshtml" />
+    <Content Include="Views\Modules\StaffMgtModule.cshtml" />
+    <Content Include="Views\Modules\PosMgtModule.cshtml" />
+    <Content Include="Views\Modules\DepSchModule.cshtml" />
+    <Content Include="Views\Modules\MyNoteModule.cshtml" />
+    <Content Include="Views\Modules\MailModule.cshtml" />
+    <Content Include="Views\Modules\MySchModule.cshtml" />
+    <Content Include="Views\Modules\MsgMgtModule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
