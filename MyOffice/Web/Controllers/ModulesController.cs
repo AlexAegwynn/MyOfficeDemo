@@ -15,7 +15,7 @@ namespace Web.Controllers
         }
 
         //Department management 部门管理
-        public PartialViewResult DepMGTModule()
+        public PartialViewResult DepMgtModule()
         {
             return PartialView();
         }

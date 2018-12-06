@@ -206,7 +206,7 @@
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Authentication\Index.cshtml" />
     <Content Include="Views\Modules\HomeModule.cshtml" />
-    <Content Include="Views\Modules\DepMGTModule.cshtml" />
+    <Content Include="Views\Modules\DepMgtModule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
