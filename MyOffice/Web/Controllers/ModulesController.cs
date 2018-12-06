@@ -15,11 +15,11 @@ namespace Web.Controllers
         }
 
         //Department management 部门管理
-        public PartialViewResult DepManagement()
+        public PartialViewResult DepMGTModule()
         {
             return PartialView();
         }
 
-
+        //Staff management 员工管理
     }
 }
