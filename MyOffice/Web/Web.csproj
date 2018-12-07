@@ -205,15 +205,23 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Authentication\Index.cshtml" />
-    <Content Include="Views\Modules\HomeModule.cshtml" />
-    <Content Include="Views\Modules\DepMgtModule.cshtml" />
-    <Content Include="Views\Modules\StaffMgtModule.cshtml" />
-    <Content Include="Views\Modules\PosMgtModule.cshtml" />
-    <Content Include="Views\Modules\DepSchModule.cshtml" />
-    <Content Include="Views\Modules\MyNoteModule.cshtml" />
-    <Content Include="Views\Modules\MailModule.cshtml" />
-    <Content Include="Views\Modules\MySchModule.cshtml" />
-    <Content Include="Views\Modules\MsgMgtModule.cshtml" />
+    <Content Include="Views\Modules\Home\HomeModule.cshtml" />
+    <Content Include="Views\Modules\Personnel\DepMgtModule.cshtml" />
+    <Content Include="Views\Modules\Personnel\StaffMgtModule.cshtml" />
+    <Content Include="Views\Modules\Personnel\PosMgtModule.cshtml" />
+    <Content Include="Views\Modules\Schedule\DepSchModule.cshtml" />
+    <Content Include="Views\Modules\Schedule\MyNoteModule.cshtml" />
+    <Content Include="Views\Modules\Message\MailModule.cshtml" />
+    <Content Include="Views\Modules\Schedule\MySchModule.cshtml" />
+    <Content Include="Views\Modules\Message\MsgMgtModule.cshtml" />
+    <Content Include="Views\Modules\System\RoleMgtModule.cshtml" />
+    <Content Include="Views\Modules\System\ConLogModule.cshtml" />
+    <Content Include="Views\Modules\System\OpnLogModule.cshtml" />
+    <Content Include="Views\Modules\System\HomeMgtModule.cshtml" />
+    <Content Include="Views\Modules\Attendance\SisoModule.cshtml" />
+    <Content Include="Views\Modules\Attendance\AttnCheckModule.cshtml" />
+    <Content Include="Views\Modules\Attendance\AttnStatModule.cshtml" />
+    <Content Include="Views\Modules\Home\QuickNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

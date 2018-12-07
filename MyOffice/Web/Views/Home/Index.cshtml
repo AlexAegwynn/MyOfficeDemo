@@ -8,267 +8,6 @@
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/Home/home.css" rel="stylesheet" />
 <script src="~/Scripts/Home/Clock.js"></script>
-<style>
-    span {
-        font-family: 'Microsoft YaHei';
-    }
-
-    /******************/
-
-    .top_div {
-        overflow: hidden;
-        position: relative;
-    }
-
-    .logo_div {
-        width: 200px;
-        height: 44px;
-        margin: 15px 0px 15px 20px;
-    }
-
-        .logo_div img {
-            width: 100%;
-            max-width: 100%;
-        }
-
-    .nav_div {
-        position: relative;
-        height: 32px;
-        background-color: rgba(255, 255, 255, 0.50);
-    }
-
-    .info_div {
-        margin-left: 10px;
-        padding-right: 70px;
-        height: 32px;
-    }
-
-        .info_div span {
-            /*font-family: 'Microsoft YaHei';*/
-            line-height: 32px;
-            font-size: 0.5em;
-            font-weight: 600;
-        }
-
-    .btn_span {
-        display: inline-block;
-        width: 80px;
-        margin-left: 5px;
-        float: right;
-        text-align: center;
-    }
-
-        .btn_span:hover {
-            background-color: rgba(255, 255, 255, 0.20);
-            cursor: pointer;
-        }
-
-        .btn_span:active {
-            background-color: rgba(255, 255, 255, 0.10);
-        }
-
-    #hide_logo {
-        width: 70px;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        text-align: center;
-        line-height: 32px;
-        font-size: 1.5em;
-        color: #808080;
-        border-left: 1px solid rgba(128, 128, 128, 0.60);
-    }
-
-        #hide_logo:hover {
-            color: black;
-            cursor: pointer;
-        }
-
-    .control_div {
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        width: 342px;
-        height: 35px;
-        background-color: rgba(0, 0, 0, 0.40);
-        border-bottom-left-radius: 50px;
-        padding-right: 10px;
-    }
-
-        .control_div span {
-            display: inline-block;
-            line-height: 35px;
-            color: white;
-            font-size: 1em;
-            font-weight: 600;
-            width: 90px;
-            float: right;
-            text-align: center;
-        }
-
-            .control_div span:hover {
-                cursor: pointer;
-                background-color: rgba(0, 0, 0, 0.20);
-            }
-
-            .control_div span:active {
-                background-color: rgba(128, 128, 128, 0.30);
-            }
-
-    /******************/
-
-    .center_div {
-        float: left;
-        position: absolute;
-        bottom: 0px;
-        top: 106px;
-        width: 100%;
-        background-color: white;
-    }
-
-    /******************/
-
-    .left_div {
-        float: left;
-        width: 220px;
-        min-width: 220px;
-        height: 100%;
-        display: flex;
-        /*display:none;*/
-    }
-
-    .menu_div {
-        width: 200px;
-        flex: auto;
-        margin: 9px 0px 9px 9px;
-        border: 1px solid rgba(128, 128, 128, 0.60);
-        background-color: white;
-    }
-
-    .menu_title {
-        width: 100%;
-        height: 30px;
-        padding-left: 15px;
-        background-color: rgba(128, 128, 128, 0.50);
-    }
-
-        .menu_title span {
-            line-height: 26px;
-            font-size: 1em;
-            font-weight: 600;
-        }
-
-    .menu_div h3 {
-        display: block;
-        height: 30px;
-        margin: 0px;
-        padding-left: 15px;
-        line-height: 30px;
-        font-size: 1em;
-        font-weight: normal;
-        cursor: pointer;
-    }
-
-        .menu_div h3:hover {
-            background-color: rgba(128, 128, 128, 0.40);
-        }
-
-    .menu_div ul {
-        display: none;
-        margin: 0px;
-        padding: 0px;
-    }
-
-        .menu_div ul li {
-            height: 30px;
-            padding-left: 33px;
-            line-height: 30px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-
-            .menu_div ul li:hover {
-                background-color: rgba(128, 128, 128, 0.30);
-            }
-
-    .menu_active {
-        transform: rotate(45deg);
-    }
-
-    /******************/
-
-    .right_div {
-        overflow: hidden;
-        height: 100%;
-        display: flex;
-    }
-
-    .tab_content_div {
-        flex: auto;
-        margin: 9px;
-        border: 1px solid rgba(128, 128, 128, 0.60);
-        background-color: white;
-    }
-
-    .tab_div {
-        position: relative;
-        z-index: 1;
-        height: 30px;
-        width: 100%;
-        padding-left: 20px;
-        border-bottom: 1px solid rgba(128, 128, 128, 0.60);
-    }
-
-        .tab_div span {
-            line-height: 30px;
-        }
-
-    #home_btn {
-        display: inline-block;
-        width: 60px;
-        text-align: center;
-        font-size: 1em;
-        font-weight: 600;
-    }
-
-        #home_btn:hover {
-            cursor: pointer;
-            background-color: rgba(165, 182, 214, 0.70);
-        }
-
-        #home_btn:active {
-            cursor: pointer;
-            background-color: rgba(165, 182, 214, 0.80);
-        }
-
-    #left_btn {
-        font-size: 1em;
-        position: absolute;
-        width: 20px;
-        height: 30px;
-        top: 0px;
-        left: 0px;
-        line-height: 29px;
-        text-align: center;
-        color: #a3a3a3;
-        border-right: 1px solid #a3a3a3;
-    }
-
-        #left_btn:hover {
-            color: black;
-            cursor: pointer;
-        }
-
-    .content_div {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        bottom: 30px;
-        padding: 35px 5px 5px 5px;
-    }
-
-    /******************/
-</style>
 <script>
     $(function () {
         $('#hide_logo').click(function () {
@@ -312,22 +51,40 @@
         $('.menu_div li').click(function () {
             $('.menu_div li').css('background-color', '');
             $(this).css('background-color', 'rgba(128, 128, 128, 0.30)');
-            $('.content_div').html(this.id);
+            $.ajax({
+                url: '/Modules/' + this.id,
+                type: 'get',
+                success: function (data) {
+                    $('.content_div').html(data);
+                },
+                error: function () {
+                    $('.content_div').html('Error');
+                }
+            });
         });
 
         $('#home_btn').click(function () {
-            $('.content_div').html(this.innerHTML);
             Reset();
+            $.ajax({
+                url: '/Modules/HomeModule',
+                type: 'get',
+                success: function (data) {
+                    $('.content_div').html(data);
+                },
+                error: function () {
+                    $('.content_div').html('Error');
+                }
+            });
         });
 
         $('#btn_msg').click(function () {
             Reset();
-            GetElement($('#M1'));
+            GetElement($('#MailModule'));
         });
 
         $('#btn_sch').click(function () {
             Reset();
-            GetElement($('#S2'));
+            GetElement($('#DepSchModule'));
         });
     })
 
@@ -335,8 +92,16 @@
         e.css('background-color', 'rgba(128, 128, 128, 0.30)');
         e.parent().prev().find('span:first').addClass("menu_active");
         e.parent().slideDown(200);
-
-        $('.content_div').html(e.attr('id'));
+        $.ajax({
+            url: '/Modules/' + e.attr('id'),
+            type: 'get',
+            success: function (data) {
+                $('.content_div').html(data);
+            },
+            error: function () {
+                $('.content_div').html('Error');
+            }
+        });
     }
 
     function Reset() {
@@ -378,37 +143,37 @@
             @*Personnel*@
             <h3><span class="glyphicon glyphicon-play"></span> <span>人事管理</span></h3>
             <ul>
-                <li id="P1">● 部门管理</li>
-                <li id="P2">● 职位管理</li>
-                <li id="P3">● 员工管理</li>
+                <li id="DepMgtModule">● 部门管理</li>
+                <li id="PosMgtModule">● 职位管理</li>
+                <li id="StaffMgtModule">● 员工管理</li>
             </ul>
             @*Schedule*@
             <h3><span class="glyphicon glyphicon-play"></span> <span>日程管理</span></h3>
             <ul>
-                <li id="S1">● 我的日程</li>
-                <li id="S2">● 部门日程</li>
-                <li id="S3">● 我的便签</li>
+                <li id="MySchModule">● 我的日程</li>
+                <li id="DepSchModule">● 部门日程</li>
+                <li id="MyNoteModule">● 我的便签</li>
             </ul>
             @*Message*@
             <h3><span class="glyphicon glyphicon-play"></span> <span>消息管理</span></h3>
             <ul>
-                <li id="M1">● 信　　箱</li>
-                <li id="M2">● 消息管理</li>
+                <li id="MailModule">● 信　　箱</li>
+                <li id="MsgMgtModule">● 消息管理</li>
             </ul>
             @*System*@
             <h3><span class="glyphicon glyphicon-play"></span> <span>系统管理</span></h3>
             <ul>
-                <li id="Sys1">● 角色管理</li>
-                <li id="Sys2">● 登录日志</li>
-                <li id="Sys3">● 操作日志</li>
-                <li id="Sys4">● 首页管理</li>
+                <li id="RoleMgtModule">● 角色管理</li>
+                <li id="ConLogModule">● 登录日志</li>
+                <li id="OpnLogModule">● 操作日志</li>
+                <li id="HomeMgtModule">● 首页管理</li>
             </ul>
             @*Attendance*@
             <h3><span class="glyphicon glyphicon-play"></span> <span>考勤管理</span></h3>
             <ul>
-                <li id="A1">● 签到签退</li>
-                <li id="A2">● 考勤查询</li>
-                <li id="A3">● 考勤统计</li>
+                <li id="SisoModule">● 签到签退</li>
+                <li id="AttnCheckModule">● 考勤查询</li>
+                <li id="AttnStatModule">● 考勤统计</li>
             </ul>
         </div>
     </div>
@@ -418,7 +183,9 @@
                 <i id="left_btn" class="glyphicon glyphicon-chevron-left"></i>
                 <span id="home_btn">首页</span>
             </div>
-            <div class="content_div">首页</div>
+            <div class="content_div">
+                @Html.Action("HomeModule", "Modules")
+            </div>
         </div>
     </div>
 </div>

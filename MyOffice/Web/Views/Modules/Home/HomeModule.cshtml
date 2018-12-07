@@ -1,0 +1,48 @@
+﻿<style>
+    .HomeModule {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        /*align-items: center;*/
+        padding-right: 3px;
+        overflow: auto;
+    }
+
+        .HomeModule::-webkit-scrollbar { /*滚动条整体样式*/
+            width: 3px; /*高宽分别对应横竖滚动条的尺寸*/
+            height: 3px;
+        }
+
+        .HomeModule::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            background: rgba(128, 128, 128, 0.50);
+        }
+
+        .HomeModule::-webkit-scrollbar-track { /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            background: #EDEDED;
+        }
+
+    .Modules {
+        flex: auto;
+        margin: 5px 5px 5px 5px;
+    }
+</style>
+
+<div class="HomeModule">
+    @Html.Partial("~/Views/Modules/Home/QuickNavigation.cshtml")
+    <div class="Modules QuickNavigation">
+        <span>快速导航</span>
+        <div></div>
+    </div>
+    @*<div class="Modules QuickNavigation">
+        <span>快速导航</span>
+        <div></div>
+    </div>*@
+    @*<div class="Modules QuickNavigation">
+        <span>快速导航</span>
+        <div></div>
+    </div>*@
+</div>
