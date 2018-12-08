@@ -3,6 +3,23 @@ span {
     font-family: 'Microsoft YaHei';
 }
 
+.scrollbar::-webkit-scrollbar { /*滚动条整体样式*/
+    width: 3px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 3px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(128, 128, 128, 0.50);
+}
+
+.scrollbar::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background: #EDEDED;
+}
+
 /******************/
 
 .top_div {
@@ -257,6 +274,16 @@ span {
     height: 100%;
     bottom: 30px;
     padding: 35px 2px 5px 5px;
+}
+
+.module_style {
+    flex: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    /*align-items: center;*/
+    padding-right: 3px;
+    overflow: auto;
 }
 
 /******************/

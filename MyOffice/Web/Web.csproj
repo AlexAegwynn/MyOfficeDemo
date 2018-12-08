@@ -169,6 +169,8 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\name.png" />
     <Content Include="Content\images\password.png" />
+    <Content Include="Content\Modules\Home\HomeModule.css" />
+    <Content Include="Content\Modules\Home\QuickNavigation.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -225,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Modules\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

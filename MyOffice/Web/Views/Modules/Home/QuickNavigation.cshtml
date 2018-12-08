@@ -1,12 +1,18 @@
-﻿
-<style>
-    .QuickNavigation {
-        width: 400px;
-        height: 250px;
-        border: 1px solid rgba(128, 128, 128, 0.70);
-    }
-</style>
+﻿<link href="~/Content/Modules/Home/QuickNavigation.css" rel="stylesheet" />
+<script>
+    $(function () {
+        $('.nav_item').click(function () {
+            Reset();
+            GetElement($('#' + this.id));
+        })
+    })
+</script>
 <div class="Modules QuickNavigation">
-    <span>快速导航</span>
-    <div></div>
+    <span class="nav_title">快速导航</span>
+    <div class="nav_content scrollbar">
+        <div class="nav_item" id="PosMgtModule"><span>● 部门管理</span></div>
+        <div class="nav_item" id="MySchModule"><span>● 我的日程</span></div>
+        <div class="nav_item" id="MyNoteModule"><span>● 我的便签</span></div>
+        <div class="nav_item" id="DepSchModule"><span>● 部门日程</span></div>
+    </div>
 </div>
