@@ -1,1 +1,44 @@
-﻿员工管理
+﻿
+
+
+<script>
+    function staffmAdd() {
+        $('#staffm_table').hide();
+        $('#staffm_div').append('<span>Test</span>')
+    }
+</script>
+<div class="module_style scrollbar">
+    <div style="min-width:800px;">
+        <div class="t_top">
+            <div class="search_div"><input type="text" /><span>搜索员工</span></div>
+            <span class="btn_add" onclick="staffmAdd()">新增员工</span>
+        </div>
+        <div id="staffm_div" class="t_center scrollbar">
+            <table id="staffm_table" class="table">
+                <thead>
+                    <tr>
+                        <th><span>员工编号</span></th>
+                        <th><span>员工名称</span></th>
+                        <th><span>状　　态</span></th>
+                        <th><span>所属部门</span></th>
+                        <th><span>职　　位</span></th>
+                        <th><span>管理操作</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < 12; i++)
+                    {
+                        <tr>
+                            <th><span>00001</span></th>
+                            <th><span>张三</span></th>
+                            <th><span>在职</span></th>
+                            <th><span>销售部</span></th>
+                            <th><span>销售员</span></th>
+                            <td><span>管理操作</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

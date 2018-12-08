@@ -1,0 +1,88 @@
+﻿
+.scrollbar::-webkit-scrollbar { /*滚动条整体样式*/
+    width: 3px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 3px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(128, 128, 128, 0.50);
+}
+
+.scrollbar::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background: #EDEDED;
+}
+
+.t_top {
+    width: 100%;
+    height: 40px;
+    padding-left: 5px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.70);
+    background-color: white;
+    position: relative;
+    top: 0px;
+    z-index: 2;
+}
+
+.t_center {
+    height: 100%;
+    width: 100%;
+    padding-right: 3px;
+    overflow-y: auto;
+}
+
+.search_div {
+    float: left;
+    height: 22px;
+    width: 300px;
+    margin-top: 6px;
+    margin-right: 20px;
+    border: 1px solid rgb(63, 120, 255);
+}
+
+    .search_div input {
+        height: 20px;
+        width: 210px;
+        border: none;
+        outline: none;
+        margin: 0px;
+        padding: 0px 0px 0px 3px;
+    }
+
+    .search_div span {
+        display: inline-block;
+        height: 20px;
+        width: 78px;
+        float: right;
+        border-left: 1px solid rgb(63, 120, 255);
+        text-align: center;
+        line-height: 22px;
+        font-size: 0.8em;
+        cursor: pointer;
+    }
+
+        .search_div span:active {
+            background-color: rgb(63, 120, 255);
+            color: white;
+        }
+
+.btn_add {
+    display: block;
+    float: left;
+    height: 22px;
+    border: 1px solid rgb(63, 120, 255);
+    width: 78px;
+    margin-top: 6px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+    .btn_add:active {
+        background-color: rgb(63, 120, 255);
+        color: white;
+    }
