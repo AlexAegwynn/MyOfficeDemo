@@ -214,9 +214,9 @@
     <Content Include="Views\Modules\Personnel\PosMgtModule.cshtml" />
     <Content Include="Views\Modules\Schedule\DepSchModule.cshtml" />
     <Content Include="Views\Modules\Schedule\MyNoteModule.cshtml" />
-    <Content Include="Views\Modules\Message\MailModule.cshtml" />
+    <Content Include="Views\Modules\NoticeAndMessage\NoticeModule.cshtml" />
     <Content Include="Views\Modules\Schedule\MySchModule.cshtml" />
-    <Content Include="Views\Modules\Message\MsgMgtModule.cshtml" />
+    <Content Include="Views\Modules\NoticeAndMessage\MsgMgtModule.cshtml" />
     <Content Include="Views\Modules\System\RoleMgtModule.cshtml" />
     <Content Include="Views\Modules\System\ConLogModule.cshtml" />
     <Content Include="Views\Modules\System\OpnLogModule.cshtml" />

@@ -5,6 +5,7 @@
     ViewBag.ScheduleCount = "99";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/Home/home.css" rel="stylesheet" />
 <link href="~/Content/Modules/Modules.css" rel="stylesheet" />
@@ -52,10 +53,13 @@
         $('.menu_div li').click(function () {
             $('.menu_div li').css('background-color', '');
             $(this).css('background-color', 'rgba(128, 128, 128, 0.30)');
+            $('#module_id').val(this.id);
+
             $.ajax({
                 url: '/Modules/' + this.id,
                 type: 'get',
                 success: function (data) {
+                    $('.t_top').show()
                     $('.content_div').html(data);
                 },
                 error: function () {
@@ -70,6 +74,8 @@
                 url: '/Modules/HomeModule',
                 type: 'get',
                 success: function (data) {
+                    $('.t_top').hide();
+                    $('#module_id').val('');
                     $('.content_div').html(data);
                 },
                 error: function () {
@@ -80,23 +86,32 @@
 
         $('#btn_msg').click(function () {
             Reset();
-            GetElement($('#MailModule'));
+            GetElement($('#NoticeModule'));
         });
 
         $('#btn_sch').click(function () {
             Reset();
             GetElement($('#DepSchModule'));
         });
+
+        $('.btn_add').click(function () {
+            let id = $('#module_id').val();
+            $('#table_' + id).hide();
+            $('#div_' + id).append('<span>Test</span>')
+        })
     })
 
     function GetElement(e) {
         e.css('background-color', 'rgba(128, 128, 128, 0.30)');
         e.parent().prev().find('span:first').addClass("menu_active");
         e.parent().slideDown(200);
+        $('#module_id').val(e.attr('id'));
+
         $.ajax({
             url: '/Modules/' + e.attr('id'),
             type: 'get',
             success: function (data) {
+                $('.t_top').show();
                 $('.content_div').html(data);
             },
             error: function () {
@@ -127,7 +142,7 @@
         <div class="info_div">
             <span>欢迎用户 [ @ViewBag.UserName ] 登录，</span><span id="clock"></span>
             <span id="btn_sch" class="btn_span">日程（@ViewBag.ScheduleCount）</span>
-            <span id="btn_msg" class="btn_span">消息（@ViewBag.MsgCount）</span>
+            <span id="btn_msg" class="btn_span">通知（@ViewBag.MsgCount）</span>
         </div>
         <span id="hide_logo" class="glyphicon glyphicon-chevron-up"></span>
     </div>
@@ -155,10 +170,10 @@
                 <li id="DepSchModule">● 部门日程</li>
                 <li id="MyNoteModule">● 我的便签</li>
             </ul>
-            @*Message*@
-            <h3><span class="glyphicon glyphicon-play"></span> <span>消息管理</span></h3>
+            @*Notice and message*@
+            <h3><span class="glyphicon glyphicon-play"></span> <span>通知消息</span></h3>
             <ul>
-                <li id="MailModule">● 信　　箱</li>
+                <li id="NoticeModule">● 通　　知</li>
                 <li id="MsgMgtModule">● 消息管理</li>
             </ul>
             @*System*@
@@ -181,8 +196,13 @@
     <div class="right_div">
         <div class="tab_content_div">
             <div class="tab_div">
+                <input id="module_id" type="hidden" />
                 <i id="left_btn" class="glyphicon glyphicon-chevron-left"></i>
                 <span id="home_btn">首页</span>
+                <div class="t_top" style="display:none;">
+                    <div class="search_div"><input type="text" /><span>查找</span></div>
+                    <span class="btn_add" style="line-height: 22px;">添加</span>
+                </div>
             </div>
             <div class="content_div">
                 @Html.Action("HomeModule", "Modules")

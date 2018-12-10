@@ -56,17 +56,17 @@ namespace Web.Controllers
         }
         #endregion
 
-        #region Message 消息管理
-        //Mail 信箱
-        public PartialViewResult MailModule()
+        #region Notice and message 消息管理
+        //Notice
+        public PartialViewResult NoticeModule()
         {
-            return PartialView("~/Views/Modules/Message/MailModule.cshtml");
+            return PartialView("~/Views/Modules/NoticeAndMessage/NoticeModule.cshtml");
         }
 
-        //Message management 信息管理
+        //Message management 消息管理
         public PartialViewResult MsgMgtModule()
         {
-            return PartialView("~/Views/Modules/Message/MsgMgtModule.cshtml");
+            return PartialView("~/Views/Modules/NoticeAndMessage/MsgMgtModule.cshtml");
         }
         #endregion
 
