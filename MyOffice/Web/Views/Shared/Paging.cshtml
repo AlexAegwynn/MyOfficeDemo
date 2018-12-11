@@ -1,0 +1,25 @@
+﻿@{
+    var total = 24;
+}
+<style>
+    .pageActive {
+        background-color: #acacac;
+    }
+</style>
+<button onclick="btnPage('Up')">上一页</button>
+@if (total != 0)
+{
+    <button class="pageGroup pageActive">1</button>
+    for (int i = 1; i < total; i++)
+    {
+        if (i >= 5) { break; }
+        <button class="pageGroup">@(i + 1)</button>
+    }
+}
+<button onclick="btnPage('Down')">下一页</button>
+
+<script>
+    var total = '@total';
+    var m_url = '@ViewBag.MUrl';
+</script>
+<script src="~/Scripts/Shared/paging.js"></script>

@@ -1,26 +1,27 @@
-﻿
+﻿@{
+    ViewBag.MUrl = "/Modules/MySchList";
+}
+
 <div class="module_style scrollbar">
     <div id="div_MySchModule" class="t_center scrollbar">
-        <table id="table_MySchModule" class="table">
-            <thead>
-                <tr>
-                    <th><span>日　　期</span></th>
-                    <th><span>标　　题</span></th>
-                    <th><span>状　　态</span></th>
-                    <th><span>管理操作</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < 12; i++)
-                {
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_MySchModule" class="table" style="margin-bottom:10px;">
+                <thead>
                     <tr>
-                        <td><span>2018-12-10</span></td>
-                        <td><span>测试测试测试</span></td>
-                        <td><span>未完成</span></td>
-                        <td><span>管理操作</span></td>
+                        <th><span>日　　期</span></th>
+                        <th><span>标　　题</span></th>
+                        <th><span>状　　态</span></th>
+                        <th><span>管理操作</span></th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("MySchList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
     </div>
 </div>

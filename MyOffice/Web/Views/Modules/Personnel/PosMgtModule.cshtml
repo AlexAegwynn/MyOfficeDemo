@@ -1,26 +1,27 @@
-﻿
+﻿@{
+    ViewBag.MUrl = "/Modules/PosMgtList";
+}
+
 <div class="module_style scrollbar">
     <div id="div_PosMgtModule" class="t_center scrollbar">
-        <table id="table_PosMgtModule" class="table">
-            <thead>
-                <tr>
-                    <th><span>职位编号</span></th>
-                    <th><span>职位名称</span></th>
-                    <th><span>状　　态</span></th>
-                    <th><span>管理操作</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < 12; i++)
-                {
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_PosMgtModule" class="table" style="margin-bottom:10px;">
+                <thead>
                     <tr>
-                        <td><span>0</span></td>
-                        <td><span>CEO</span></td>
-                        <td><span>有效</span></td>
-                        <td><span>管理操作</span></td>
+                        <th style="width:80px;"><span>职位编号</span></th>
+                        <th style="width:250px;"><span>职位名称</span></th>
+                        <th><span>状　　态</span></th>
+                        <th><span>管理操作</span></th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("PosMgtList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
     </div>
 </div>

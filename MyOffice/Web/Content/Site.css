@@ -9,6 +9,10 @@
     user-select: none;
 }
 
+table {
+    min-width: 800px;
+}
+
 .page_div {
     width: 100%;
     min-width: 750px;

@@ -194,6 +194,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Shared\paging.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -225,6 +226,13 @@
     <Content Include="Views\Modules\Attendance\AttnCheckModule.cshtml" />
     <Content Include="Views\Modules\Attendance\AttnStatModule.cshtml" />
     <Content Include="Views\Modules\Home\QuickNavigation.cshtml" />
+    <Content Include="Views\Modules\Personnel\DepMgtList.cshtml" />
+    <Content Include="Views\Shared\Paging.cshtml" />
+    <Content Include="Views\Modules\Personnel\PosMgtList.cshtml" />
+    <Content Include="Views\Modules\Personnel\StaffMgtList.cshtml" />
+    <Content Include="Views\Modules\Schedule\MySchList.cshtml" />
+    <Content Include="Views\Modules\Schedule\DepSchList.cshtml" />
+    <Content Include="Views\Modules\Schedule\MyNoteList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

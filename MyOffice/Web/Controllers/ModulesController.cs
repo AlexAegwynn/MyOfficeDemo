@@ -23,16 +23,34 @@ namespace Web.Controllers
             return PartialView("~/Views/Modules/Personnel/DepMgtModule.cshtml");
         }
 
+        //部门管理列表
+        public PartialViewResult DepMgtList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/Personnel/DepMgtList.cshtml");
+        }
+
         //Position management 职位管理
         public PartialViewResult PosMgtModule()
         {
             return PartialView("~/Views/Modules/Personnel/PosMgtModule.cshtml");
         }
 
+        //职位管理列表
+        public PartialViewResult PosMgtList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/Personnel/PosMgtList.cshtml");
+        }
+
         //Staff management 员工管理
         public PartialViewResult StaffMgtModule()
         {
             return PartialView("~/Views/Modules/Personnel/StaffMgtModule.cshtml");
+        }
+
+        //员工管理列表
+        public PartialViewResult StaffMgtList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/Personnel/StaffMgtList.cshtml");
         }
         #endregion
 
@@ -43,16 +61,33 @@ namespace Web.Controllers
             return PartialView("~/Views/Modules/Schedule/MySchModule.cshtml");
         }
 
+        //我的日程列表
+        public PartialViewResult MySchList(int index = 0,string search = "")
+        {
+            return PartialView("~/Views/Modules/Schedule/MySchList.cshtml");
+        }
+
         //Department schedule 部门日程
         public PartialViewResult DepSchModule()
         {
             return PartialView("~/Views/Modules/Schedule/DepSchModule.cshtml");
         }
 
+        //部门日程列表
+        public PartialViewResult DepSchList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/Schedule/DepSchList.cshtml");
+        }
+
         //MyNote 我的便签
         public PartialViewResult MyNoteModule()
         {
             return PartialView("~/Views/Modules/Schedule/MyNoteModule.cshtml");
+        }
+
+        public PartialViewResult MyNoteList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/Schedule/MyNoteList.cshtml");
         }
         #endregion
 

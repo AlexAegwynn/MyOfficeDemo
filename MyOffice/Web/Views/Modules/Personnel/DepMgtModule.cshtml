@@ -1,28 +1,28 @@
-﻿
+﻿@{
+    ViewBag.MUrl = "/Modules/DepMgtList";
+}
+
 <div class="module_style scrollbar">
-    <div style="min-width:800px;flex:auto;">
-        <div id="div_DepMgtModule" class="t_center scrollbar">
-            <table id="table_DepMgtModule" class="table">
+    <div id="div_DepMgtModule" class="t_center scrollbar">
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_DepMgtModule" class="table" style="margin-bottom:10px;">
                 <thead>
                     <tr>
-                        <th><span>部门编号</span></th>
+                        <th style="width:80px;"><span>部门编号</span></th>
                         <th><span>部门名称</span></th>
                         <th><span>状　　态</span></th>
                         <th><span>管理操作</span></th>
                     </tr>
                 </thead>
-                <tbody>
-                    @for (int i = 0; i < 15; i++)
-                    {
-                        <tr>
-                            <td><span>0</span></td>
-                            <td><span>销售部</span></td>
-                            <td><span>有效</span></td>
-                            <td><span>管理操作</span></td>
-                        </tr>
-                    }
+                <tbody id="deplist">
+                    @Html.Action("DepMgtList")
                 </tbody>
             </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
         </div>
     </div>
 </div>
+

@@ -1,30 +1,29 @@
-﻿
+﻿@{
+    ViewBag.MUrl = "/Modules/StaffMgtList";
+}
+
 <div class="module_style scrollbar">
     <div id="div_StaffMgtModule" class="t_center scrollbar">
-        <table id="table_StaffMgtModule" class="table">
-            <thead>
-                <tr>
-                    <th><span>员工编号</span></th>
-                    <th><span>员工名称</span></th>
-                    <th><span>状　　态</span></th>
-                    <th><span>所属部门</span></th>
-                    <th><span>职　　位</span></th>
-                    <th><span>管理操作</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < 12; i++)
-                {
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_StaffMgtModule" class="table" style="margin-bottom:10px;">
+                <thead>
                     <tr>
-                        <th><span>00001</span></th>
-                        <th><span>张三</span></th>
-                        <th><span>在职</span></th>
-                        <th><span>销售部</span></th>
-                        <th><span>销售员</span></th>
-                        <td><span>管理操作</span></td>
+                        <th style="width:80px;"><span>员工编号</span></th>
+                        <th style="width:100px;"><span>员工名称</span></th>
+                        <th><span>状　　态</span></th>
+                        <th><span>所属部门</span></th>
+                        <th><span>职　　位</span></th>
+                        <th><span>管理操作</span></th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("StaffMgtList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
     </div>
 </div>

@@ -96,8 +96,9 @@
 
         $('.btn_add').click(function () {
             let id = $('#module_id').val();
-            $('#table_' + id).hide();
-            $('#div_' + id).append('<span>Test</span>')
+            $('#box').hide();
+            $('#info').html('<span>Test</span>');
+            $('#info').show();
         })
     })
 

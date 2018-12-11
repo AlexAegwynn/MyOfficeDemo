@@ -83,6 +83,6 @@
         color: white;
     }
 
-table tbody tr:hover {
-    background-color: rgba(128, 128, 128, 0.30);
-}
+    table tbody tr:hover {
+        background-color: rgba(128, 128, 128, 0.30);
+    }
