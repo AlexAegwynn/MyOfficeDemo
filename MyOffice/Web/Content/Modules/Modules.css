@@ -67,12 +67,12 @@
 
 .btn_add {
     display: block;
-    float: left;
+    float: right;
     height: 22px;
     border: 1px solid rgb(63, 120, 255);
     width: 58px;
-    margin-top: 4px;
     text-align: center;
+    line-height: 22px;
     font-size: 0.8em;
     cursor: pointer;
 }
@@ -82,6 +82,6 @@
         color: white;
     }
 
-    table tbody tr:hover {
-        background-color: rgba(128, 128, 128, 0.30);
-    }
+table tbody tr:hover {
+    background-color: rgba(128, 128, 128, 0.30);
+}
