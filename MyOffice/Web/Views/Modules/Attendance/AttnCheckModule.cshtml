@@ -1,1 +1,31 @@
-﻿考勤查询
+﻿@{
+    ViewBag.MUrl = "/Modules/AttnCheckList";
+}
+
+<div class="module_style scrollbar">
+    <div id="div_DepMgtModule" class="t_center scrollbar">
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_DepMgtModule" class="table" style="margin-bottom:10px;">
+                <thead>
+                    <tr><td colspan="6"></td></tr>
+                    <tr>
+                        <th><span>类　　型</span></th>
+                        <th><span>时　　间</span></th>
+                        <th><span>员工姓名</span></th>
+                        <th><span>备　　注</span></th>
+                        <th><span>状　　态</span></th>
+                        <th><span>动　　作</span></th>
+                    </tr>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("AttnCheckList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+

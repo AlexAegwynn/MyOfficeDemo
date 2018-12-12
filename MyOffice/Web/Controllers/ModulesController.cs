@@ -62,7 +62,7 @@ namespace Web.Controllers
         }
 
         //我的日程列表
-        public PartialViewResult MySchList(int index = 0,string search = "")
+        public PartialViewResult MySchList(int index = 0, string search = "")
         {
             return PartialView("~/Views/Modules/Schedule/MySchList.cshtml");
         }
@@ -92,16 +92,28 @@ namespace Web.Controllers
         #endregion
 
         #region Notice and message 消息管理
-        //Notice
+        //Notice 通知
         public PartialViewResult NoticeModule()
         {
             return PartialView("~/Views/Modules/NoticeAndMessage/NoticeModule.cshtml");
+        }
+
+        //通知列表
+        public PartialViewResult NoticeList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/NoticeAndMessage/NoticeList.cshtml");
         }
 
         //Message management 消息管理
         public PartialViewResult MsgMgtModule()
         {
             return PartialView("~/Views/Modules/NoticeAndMessage/MsgMgtModule.cshtml");
+        }
+
+        //消息管理列表
+        public PartialViewResult MsgMgtList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/NoticeAndMessage/MsgMgtList.cshtml");
         }
         #endregion
 
@@ -112,16 +124,22 @@ namespace Web.Controllers
             return PartialView("~/Views/Modules/System/RoleMgtModule.cshtml");
         }
 
-        //ConLog 登录日志
-        public PartialViewResult ConLogModule()
+        //角色管理列表
+        public PartialViewResult RoleMgtList(int index = 0, string search = "")
         {
-            return PartialView("~/Views/Modules/System/ConLogModule.cshtml");
+            return PartialView("~/Views/Modules/System/RoleMgtList.cshtml");
         }
 
         //Operation log 操作日志
         public PartialViewResult OpnLogModule()
         {
             return PartialView("~/Views/Modules/System/OpnLogModule.cshtml");
+        }
+
+        //操作日志列表
+        public PartialViewResult OpnLogList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/System/OpnLogList.cshtml");
         }
 
         //Home management 首页管理
@@ -132,16 +150,16 @@ namespace Web.Controllers
         #endregion
 
         #region Attendance 考勤管理
-        //Sign in sign out 签到签退
-        public PartialViewResult SisoModule()
-        {
-            return PartialView("~/Views/Modules/Attendance/SisoModule.cshtml");
-        }
-
         //Attendance check 考勤查询
         public PartialViewResult AttnCheckModule()
         {
             return PartialView("~/Views/Modules/Attendance/AttnCheckModule.cshtml");
+        }
+
+        //考勤查询列表
+        public PartialViewResult AttnCheckList(int index = 0, string search = "")
+        {
+            return PartialView("~/Views/Modules/Attendance/AttnCheckList.cshtml");
         }
 
         //Attendance statistics 考勤统计

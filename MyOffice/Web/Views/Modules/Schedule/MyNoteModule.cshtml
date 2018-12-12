@@ -1,1 +1,49 @@
-﻿我的便签
+﻿@{
+    ViewBag.MUrl = "/Modules/MyNoteList";
+}
+<style>
+    .mynote_hide {
+        display: none;
+    }
+
+    .mynote_active {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    $(function () {
+        $('.mynote_active').click(function () {
+            let e = $(this).parent().parent().next();
+            if (e.hasClass('mynote_hide')) {
+                e.removeClass('mynote_hide');
+                $(this).html('收起');
+            } else {
+                e.addClass('mynote_hide');
+                $(this).html('详情');
+            }
+        })
+    });
+</script>
+<div class="module_style scrollbar">
+    <div id="div_MySchModule" class="t_center scrollbar">
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_MySchModule" class="table" style="margin-bottom:10px;">
+                <thead>
+                    <tr>
+                        <th style="width:120px;"><span>日　　期</span></th>
+                        <th><span>标　　题</span></th>
+                        <th><span>动　　作</span></th>
+                    </tr>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("MyNoteList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
+    </div>
+</div>

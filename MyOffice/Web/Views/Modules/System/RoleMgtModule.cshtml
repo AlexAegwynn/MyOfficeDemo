@@ -1,1 +1,27 @@
-﻿角色管理
+﻿@{
+    ViewBag.MUrl = "/Modules/RoleMgtList";
+}
+
+<div class="module_style scrollbar">
+    <div id="div_DepMgtModule" class="t_center scrollbar">
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_DepMgtModule" class="table" style="margin-bottom:10px;">
+                <thead>
+                    <tr>
+                        <th><span>角色编号</span></th>
+                        <th><span>角色名称</span></th>
+                        <th><span>动　　作</span></th>
+                    </tr>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("RoleMgtList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+

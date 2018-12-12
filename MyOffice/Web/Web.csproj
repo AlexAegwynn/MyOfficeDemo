@@ -219,10 +219,8 @@
     <Content Include="Views\Modules\Schedule\MySchModule.cshtml" />
     <Content Include="Views\Modules\NoticeAndMessage\MsgMgtModule.cshtml" />
     <Content Include="Views\Modules\System\RoleMgtModule.cshtml" />
-    <Content Include="Views\Modules\System\ConLogModule.cshtml" />
     <Content Include="Views\Modules\System\OpnLogModule.cshtml" />
     <Content Include="Views\Modules\System\HomeMgtModule.cshtml" />
-    <Content Include="Views\Modules\Attendance\SisoModule.cshtml" />
     <Content Include="Views\Modules\Attendance\AttnCheckModule.cshtml" />
     <Content Include="Views\Modules\Attendance\AttnStatModule.cshtml" />
     <Content Include="Views\Modules\Home\QuickNavigation.cshtml" />
@@ -233,6 +231,11 @@
     <Content Include="Views\Modules\Schedule\MySchList.cshtml" />
     <Content Include="Views\Modules\Schedule\DepSchList.cshtml" />
     <Content Include="Views\Modules\Schedule\MyNoteList.cshtml" />
+    <Content Include="Views\Modules\NoticeAndMessage\NoticeList.cshtml" />
+    <Content Include="Views\Modules\NoticeAndMessage\MsgMgtList.cshtml" />
+    <Content Include="Views\Modules\System\RoleMgtList.cshtml" />
+    <Content Include="Views\Modules\System\OpnLogList.cshtml" />
+    <Content Include="Views\Modules\Attendance\AttnCheckList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

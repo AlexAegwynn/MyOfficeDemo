@@ -94,12 +94,12 @@
             GetElement($('#DepSchModule'));
         });
 
-        $('.btn_add').click(function () {
-            let id = $('#module_id').val();
-            $('#box').hide();
-            $('#info').html('<span>Test</span>');
-            $('#info').show();
-        })
+        //$('.btn_add').click(function () {
+        //    let id = $('#module_id').val();
+        //    $('#box').hide();
+        //    $('#info').html('<span>Test</span>');
+        //    $('#info').show();
+        //})
     })
 
     function GetElement(e) {
@@ -181,14 +181,12 @@
             <h3><span class="glyphicon glyphicon-play"></span> <span>系统管理</span></h3>
             <ul>
                 <li id="RoleMgtModule">● 角色管理</li>
-                <li id="ConLogModule">● 登录日志</li>
                 <li id="OpnLogModule">● 操作日志</li>
                 <li id="HomeMgtModule">● 首页管理</li>
             </ul>
             @*Attendance*@
             <h3><span class="glyphicon glyphicon-play"></span> <span>考勤管理</span></h3>
             <ul>
-                <li id="SisoModule">● 签到签退</li>
                 <li id="AttnCheckModule">● 考勤查询</li>
                 <li id="AttnStatModule">● 考勤统计</li>
             </ul>
@@ -202,7 +200,6 @@
                 <span id="home_btn">首页</span>
                 <div class="t_top" style="display:none;">
                     <div class="search_div"><input type="text" /><span>查找</span></div>
-                    <span class="btn_add" style="line-height: 22px;">添加</span>
                 </div>
             </div>
             <div class="content_div">

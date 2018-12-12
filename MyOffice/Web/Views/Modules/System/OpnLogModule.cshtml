@@ -1,1 +1,51 @@
-﻿操作日志
+﻿@{
+    ViewBag.MUrl = "/Modules/OpnLogList";
+}
+<style>
+    .conlog_hide {
+        display: none;
+    }
+
+    .conlog_active {
+        cursor: pointer;
+    }
+</style>
+<script>
+    $(function () {
+        $('.conlog_active').click(function () {
+            let e = $(this).parent().parent().next();
+            if (e.hasClass('conlog_hide')) {
+                e.removeClass('conlog_hide');
+                $(this).html('收起');
+            } else {
+                e.addClass('conlog_hide');
+                $(this).html('详情');
+            }
+        })
+    });
+</script>
+<div class="module_style scrollbar">
+    <div id="div_DepMgtModule" class="t_center scrollbar">
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_DepMgtModule" class="table" style="margin-bottom:10px;">
+                <thead>
+                    <tr>
+                        <th><span>日志编号</span></th>
+                        <th><span>时　　间</span></th>
+                        <th><span>操作类型</span></th>
+                        <th><span>操作人员</span></th>
+                        <th><span>动　　作</span></th>
+                    </tr>
+                </thead>
+                <tbody id="deplist">
+                    @Html.Action("OpnLogList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,1 +1,19 @@
-﻿通知
+﻿@{
+    ViewBag.MUrl = "/Modules/NoticeList";
+}
+
+<div class="module_style scrollbar">
+    <div id="div_MySchModule" class="t_center scrollbar">
+        <div id="info" style="display:none;"></div>
+        <div id="box">
+            <table id="table_MySchModule" class="table" style="margin-bottom:10px;">
+                <tbody id="deplist">
+                    @Html.Action("NoticeList")
+                </tbody>
+            </table>
+            <div>
+                @Html.Partial("~/Views/Shared/Paging.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
