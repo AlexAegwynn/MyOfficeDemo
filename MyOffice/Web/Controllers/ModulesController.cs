@@ -171,6 +171,9 @@ namespace Web.Controllers
         #endregion
 
         #region System 系统管理
+        //User management 用户管理
+
+
         //Role management 角色管理
         public PartialViewResult RoleMgtModule()
         {
