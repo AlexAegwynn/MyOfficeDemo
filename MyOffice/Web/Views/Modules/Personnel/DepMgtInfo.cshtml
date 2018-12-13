@@ -1,0 +1,95 @@
+﻿@model Web.ViewModels.Vm_DepMgt
+
+<style>
+    .edit_row {
+        margin: 20px 10px;
+        height: 30px;
+    }
+
+        .edit_row span {
+            font-size: 1.1em;
+            line-height: 30px;
+        }
+
+        .edit_row label {
+            line-height: 30px;
+        }
+
+    #DmName, #DmID {
+        width: 400px;
+        height: 30px;
+        font-size: 1.1em;
+        padding-left: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.60);
+    }
+
+        #DmName:focus {
+            border-color: rgb(63, 120, 255);
+        }
+
+        #DmID:focus {
+            border-color: rgb(63, 120, 255);
+        }
+</style>
+<script>
+    $('.btn_return').click(function () {
+        $('#info').html('');
+        $('#info').hide();
+        $('#box').show();
+    });
+
+    $('#DmName').focus(function () {
+        $(this).css({ 'border-color': '' });
+    })
+
+    $('#DmID').focus(function () {
+        $(this).css({ 'border-color': '' });
+    })
+
+    $('.btn_save').click(function () {
+        let id = $('#DmID');
+        if (id.val() == '') { id.css({ 'border-color': 'red' }); return false; }
+
+        let name = $('#DmName');
+        if (name.val() == '') { name.css({ 'border-color': 'red' }); return false; }
+
+        $.ajax({
+            url: '/Modules/ExistDmID',
+            type: 'post',
+            data: { dmid: id.val() },
+            success: function (data) {
+                if (data == true) {
+                    $.ajax({
+                        url: '/Modules/DepMgtSave',
+                        type: 'post',
+                        data: $('#dminfo').serialize(),
+                        success: function (data) {
+
+                        }
+                    });
+                } else {
+                    alert('部门编号已存在');
+                }
+            }
+        });
+    })
+</script>
+
+<div style="padding:10px 0px 0px 10px;"><span class="btn_return">返 回</span></div>
+<form id="dminfo">
+    @Html.HiddenFor(m => m.DmKey)
+    <div class="edit_row">
+        <span>部门编号：</span>
+        <input id="DmID" name="DmID" type="text" />
+    </div>
+    <div class="edit_row">
+        <span>部门名称：</span>
+        <input id="DmName" name="DmName" type="text" />
+    </div>
+    <div class="edit_row">
+        <span>状　　态：</span>
+        <label>@Html.RadioButtonFor(m => m.DmState, 1) 启用</label>
+        <label>@Html.RadioButtonFor(m => m.DmState, 0) 禁用</label>
+    </div>
+</form>
+<div style="margin:10px 0px 10px 10px;"><span class="btn_save">保 存</span></div>

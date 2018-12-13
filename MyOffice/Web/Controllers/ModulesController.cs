@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using Web.ViewModels;
+
 namespace Web.Controllers
 {
     public class ModulesController : Controller
@@ -23,10 +25,63 @@ namespace Web.Controllers
             return PartialView("~/Views/Modules/Personnel/DepMgtModule.cshtml");
         }
 
-        //部门管理列表
         public PartialViewResult DepMgtList(int index = 0, string search = "")
         {
-            return PartialView("~/Views/Modules/Personnel/DepMgtList.cshtml");
+            List<Vm_DepMgt> vList = new List<Vm_DepMgt>();
+            for (int i = 0; i < 10; i++)
+            {
+                Vm_DepMgt vModel = new Vm_DepMgt();
+                vModel.DmKey = "00000000-0000-0000-0000-00000000000" + i;
+                vModel.DmID = i.ToString();
+                vModel.DmName = "部门" + i;
+                vModel.DmState = (i % 2) > 0 ? 0 : 1;
+                vList.Add(vModel);
+            }
+
+            return PartialView("~/Views/Modules/Personnel/DepMgtList.cshtml", vList);
+        }
+
+        public PartialViewResult DepMgtInfo(string dmkey = "")
+        {
+            Vm_DepMgt vdm = new Vm_DepMgt();
+
+            return PartialView("~/Views/Modules/Personnel/DepMgtInfo.cshtml", vdm);
+        }
+
+        public JsonResult ExistDmID(string dmid)
+        {
+            JsonResult json = new JsonResult();
+            bool result = true;
+            if (dmid == "004")
+            {
+                result = false;
+            }
+            json.Data = result;
+
+            return json;
+        }
+
+        public JsonResult DepMgtSave(Vm_DepMgt vModel)
+        {
+            JsonResult json = new JsonResult();
+
+            if (vModel.DmKey != "")
+            {
+                //Edit
+            }
+            else
+            {
+                //Insert
+            }
+
+            return json;
+        }
+
+        public JsonResult DepMgtDel(string dmkey)
+        {
+            JsonResult json = new JsonResult();
+            json.Data = false;
+            return json;
         }
 
         //Position management 职位管理
@@ -35,7 +90,6 @@ namespace Web.Controllers
             return PartialView("~/Views/Modules/Personnel/PosMgtModule.cshtml");
         }
 
-        //职位管理列表
         public PartialViewResult PosMgtList(int index = 0, string search = "")
         {
             return PartialView("~/Views/Modules/Personnel/PosMgtList.cshtml");
@@ -47,7 +101,6 @@ namespace Web.Controllers
             return PartialView("~/Views/Modules/Personnel/StaffMgtModule.cshtml");
         }
 
-        //员工管理列表
         public PartialViewResult StaffMgtList(int index = 0, string search = "")
         {
             return PartialView("~/Views/Modules/Personnel/StaffMgtList.cshtml");

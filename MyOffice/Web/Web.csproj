@@ -154,6 +154,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Vm_DepMgt.cs" />
     <Compile Include="ViewModels\Vm_UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +237,7 @@
     <Content Include="Views\Modules\System\RoleMgtList.cshtml" />
     <Content Include="Views\Modules\System\OpnLogList.cshtml" />
     <Content Include="Views\Modules\Attendance\AttnCheckList.cshtml" />
+    <Content Include="Views\Modules\Personnel\DepMgtInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

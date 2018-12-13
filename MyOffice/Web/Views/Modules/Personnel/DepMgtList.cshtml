@@ -1,10 +1,17 @@
-﻿
-@for (int i = 0; i < 15; i++)
+﻿@{
+    var vList = Model as List<Web.ViewModels.Vm_DepMgt>;
+}
+
+@foreach (var item in vList)
 {
     <tr>
-        <td><span>@(i + 1)</span></td>
-        <td><span>销售部</span></td>
-        <td><span>启用</span></td>
-        <td><span>管理操作</span></td>
+        <td><span>@item.DmID</span></td>
+        <td><span>@item.DmName</span></td>
+        <td><span>@(item.DmState == 1 ? "启用" : "禁用")</span></td>
+        <td>
+            @Html.Hidden("DmKey", item.DmKey)
+            <span onclick="DmEdit(this)" style="cursor:pointer;">编辑</span>
+            <span onclick="DmDelete(this)" style="cursor:pointer;">删除</span>
+        </td>
     </tr>
 }

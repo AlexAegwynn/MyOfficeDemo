@@ -1,4 +1,15 @@
-﻿
+﻿label {
+    font-weight: normal;
+    margin: 0px;
+}
+
+input, input[type=checkbox], input[type=radio] {
+    border: none;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+}
+
 .scrollbar::-webkit-scrollbar { /*滚动条整体样式*/
     width: 3px; /*高宽分别对应横竖滚动条的尺寸*/
     height: 3px;
@@ -42,10 +53,7 @@
     .search_div input {
         height: 20px;
         width: 210px;
-        border: none;
-        outline: none;
-        margin: 0px;
-        padding: 0px 0px 0px 3px;
+        padding-left: 3px;
     }
 
     .search_div span {
@@ -80,6 +88,40 @@
     .btn_add:active {
         background-color: rgb(63, 120, 255);
         color: white;
+    }
+
+.btn_return {
+    display: block;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1em;
+    font-weight: 800;
+    background-color: #949494;
+    color: white;
+    cursor: pointer;
+}
+
+    .btn_return:active {
+        background-color: #808080;
+    }
+
+.btn_save {
+    display: block;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1em;
+    font-weight: 800;
+    background-color: rgb(63, 120, 255);
+    color: white;
+    cursor: pointer;
+}
+
+    .btn_save:active {
+        background-color: rgb(30, 97, 255);
     }
 
 table tbody tr:hover {
